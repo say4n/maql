@@ -1,0 +1,385 @@
+Non Colliding Paths
+
+Path #1
+:: Agent A ::
+Path = [0, 1, 2, 5, 4, 3, 6, 7, 8]
+Discounted Return = 92.27446944279201
+:: Agent B ::
+Path = [2, 5, 4, 3, 6]
+Discounted Return = 96.059601
+
+Path #2
+:: Agent A ::
+Path = [0, 1, 2, 5, 4, 3, 6, 7, 8]
+Discounted Return = 92.27446944279201
+:: Agent B ::
+Path = [2, 5, 4, 7, 6]
+Discounted Return = 96.059601
+
+Path #3
+:: Agent A ::
+Path = [0, 1, 2, 5, 4, 3, 6, 7, 8]
+Discounted Return = 92.27446944279201
+:: Agent B ::
+Path = [2, 5, 8, 7, 6]
+Discounted Return = 96.059601
+
+Path #4
+:: Agent A ::
+Path = [0, 1, 2, 5, 4, 7, 8]
+Discounted Return = 94.1480149401
+:: Agent B ::
+Path = [2, 5, 4, 1, 0, 3, 6]
+Discounted Return = 94.1480149401
+
+Path #5
+:: Agent A ::
+Path = [0, 1, 2, 5, 4, 7, 8]
+Discounted Return = 94.1480149401
+:: Agent B ::
+Path = [2, 5, 4, 3, 6]
+Discounted Return = 96.059601
+
+Path #6
+:: Agent A ::
+Path = [0, 1, 2, 5, 4, 7, 8]
+Discounted Return = 94.1480149401
+:: Agent B ::
+Path = [2, 5, 4, 7, 6]
+Discounted Return = 96.059601
+
+Path #7
+:: Agent A ::
+Path = [0, 1, 2, 5, 4, 7, 8]
+Discounted Return = 94.1480149401
+:: Agent B ::
+Path = [2, 5, 8, 7, 6]
+Discounted Return = 96.059601
+
+Path #8
+:: Agent A ::
+Path = [0, 1, 2, 5, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 5, 4, 1, 0, 3, 6]
+Discounted Return = 94.1480149401
+
+Path #9
+:: Agent A ::
+Path = [0, 1, 2, 5, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 5, 4, 3, 6]
+Discounted Return = 96.059601
+
+Path #10
+:: Agent A ::
+Path = [0, 1, 2, 5, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 5, 4, 7, 6]
+Discounted Return = 96.059601
+
+Path #11
+:: Agent A ::
+Path = [0, 1, 2, 5, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 5, 8, 7, 4, 1, 0, 3, 6]
+Discounted Return = 92.27446944279201
+
+Path #12
+:: Agent A ::
+Path = [0, 1, 2, 5, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 5, 8, 7, 4, 3, 6]
+Discounted Return = 94.1480149401
+
+Path #13
+:: Agent A ::
+Path = [0, 1, 2, 5, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 5, 8, 7, 6]
+Discounted Return = 96.059601
+
+Path #14
+:: Agent A ::
+Path = [0, 1, 4, 3, 6, 7, 8]
+Discounted Return = 94.1480149401
+:: Agent B ::
+Path = [2, 5, 8, 7, 4, 1, 0, 3, 6]
+Discounted Return = 92.27446944279201
+
+Path #15
+:: Agent A ::
+Path = [0, 1, 4, 3, 6, 7, 8]
+Discounted Return = 94.1480149401
+:: Agent B ::
+Path = [2, 5, 8, 7, 4, 3, 6]
+Discounted Return = 94.1480149401
+
+Path #16
+:: Agent A ::
+Path = [0, 1, 4, 5, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 5, 8, 7, 4, 1, 0, 3, 6]
+Discounted Return = 92.27446944279201
+
+Path #17
+:: Agent A ::
+Path = [0, 1, 4, 5, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 5, 8, 7, 4, 3, 6]
+Discounted Return = 94.1480149401
+
+Path #18
+:: Agent A ::
+Path = [0, 1, 4, 5, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 5, 8, 7, 6]
+Discounted Return = 96.059601
+
+Path #19
+:: Agent A ::
+Path = [0, 3, 6, 7, 4, 1, 2, 5, 8]
+Discounted Return = 92.27446944279201
+:: Agent B ::
+Path = [2, 1, 0, 3, 6]
+Discounted Return = 96.059601
+
+Path #20
+:: Agent A ::
+Path = [0, 3, 6, 7, 4, 1, 2, 5, 8]
+Discounted Return = 92.27446944279201
+:: Agent B ::
+Path = [2, 1, 4, 3, 6]
+Discounted Return = 96.059601
+
+Path #21
+:: Agent A ::
+Path = [0, 3, 6, 7, 4, 1, 2, 5, 8]
+Discounted Return = 92.27446944279201
+:: Agent B ::
+Path = [2, 1, 4, 5, 8, 7, 6]
+Discounted Return = 94.1480149401
+
+Path #22
+:: Agent A ::
+Path = [0, 3, 6, 7, 4, 1, 2, 5, 8]
+Discounted Return = 92.27446944279201
+:: Agent B ::
+Path = [2, 5, 4, 1, 0, 3, 6]
+Discounted Return = 94.1480149401
+
+Path #23
+:: Agent A ::
+Path = [0, 3, 6, 7, 4, 1, 2, 5, 8]
+Discounted Return = 92.27446944279201
+:: Agent B ::
+Path = [2, 5, 4, 3, 6]
+Discounted Return = 96.059601
+
+Path #24
+:: Agent A ::
+Path = [0, 3, 6, 7, 4, 5, 8]
+Discounted Return = 94.1480149401
+:: Agent B ::
+Path = [2, 1, 0, 3, 6]
+Discounted Return = 96.059601
+
+Path #25
+:: Agent A ::
+Path = [0, 3, 6, 7, 4, 5, 8]
+Discounted Return = 94.1480149401
+:: Agent B ::
+Path = [2, 1, 4, 3, 6]
+Discounted Return = 96.059601
+
+Path #26
+:: Agent A ::
+Path = [0, 3, 6, 7, 4, 5, 8]
+Discounted Return = 94.1480149401
+:: Agent B ::
+Path = [2, 1, 4, 5, 8, 7, 6]
+Discounted Return = 94.1480149401
+
+Path #27
+:: Agent A ::
+Path = [0, 3, 6, 7, 4, 5, 8]
+Discounted Return = 94.1480149401
+:: Agent B ::
+Path = [2, 5, 4, 1, 0, 3, 6]
+Discounted Return = 94.1480149401
+
+Path #28
+:: Agent A ::
+Path = [0, 3, 6, 7, 4, 5, 8]
+Discounted Return = 94.1480149401
+:: Agent B ::
+Path = [2, 5, 4, 3, 6]
+Discounted Return = 96.059601
+
+Path #29
+:: Agent A ::
+Path = [0, 3, 6, 7, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 1, 0, 3, 6]
+Discounted Return = 96.059601
+
+Path #30
+:: Agent A ::
+Path = [0, 3, 6, 7, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 1, 0, 3, 4, 5, 8, 7, 6]
+Discounted Return = 92.27446944279201
+
+Path #31
+:: Agent A ::
+Path = [0, 3, 6, 7, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 1, 0, 3, 4, 7, 6]
+Discounted Return = 94.1480149401
+
+Path #32
+:: Agent A ::
+Path = [0, 3, 6, 7, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 1, 4, 3, 6]
+Discounted Return = 96.059601
+
+Path #33
+:: Agent A ::
+Path = [0, 3, 6, 7, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 5, 4, 1, 0, 3, 6]
+Discounted Return = 94.1480149401
+
+Path #34
+:: Agent A ::
+Path = [0, 3, 6, 7, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 5, 4, 3, 6]
+Discounted Return = 96.059601
+
+Path #35
+:: Agent A ::
+Path = [0, 3, 4, 1, 2, 5, 8]
+Discounted Return = 94.1480149401
+:: Agent B ::
+Path = [2, 1, 0, 3, 6]
+Discounted Return = 96.059601
+
+Path #36
+:: Agent A ::
+Path = [0, 3, 4, 1, 2, 5, 8]
+Discounted Return = 94.1480149401
+:: Agent B ::
+Path = [2, 1, 0, 3, 4, 7, 6]
+Discounted Return = 94.1480149401
+
+Path #37
+:: Agent A ::
+Path = [0, 3, 4, 1, 2, 5, 8]
+Discounted Return = 94.1480149401
+:: Agent B ::
+Path = [2, 5, 8, 7, 4, 1, 0, 3, 6]
+Discounted Return = 92.27446944279201
+
+Path #38
+:: Agent A ::
+Path = [0, 3, 4, 1, 2, 5, 8]
+Discounted Return = 94.1480149401
+:: Agent B ::
+Path = [2, 5, 8, 7, 4, 3, 6]
+Discounted Return = 94.1480149401
+
+Path #39
+:: Agent A ::
+Path = [0, 3, 4, 1, 2, 5, 8]
+Discounted Return = 94.1480149401
+:: Agent B ::
+Path = [2, 5, 8, 7, 6]
+Discounted Return = 96.059601
+
+Path #40
+:: Agent A ::
+Path = [0, 3, 4, 5, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 1, 0, 3, 6]
+Discounted Return = 96.059601
+
+Path #41
+:: Agent A ::
+Path = [0, 3, 4, 5, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 1, 0, 3, 4, 5, 8, 7, 6]
+Discounted Return = 92.27446944279201
+
+Path #42
+:: Agent A ::
+Path = [0, 3, 4, 5, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 1, 0, 3, 4, 7, 6]
+Discounted Return = 94.1480149401
+
+Path #43
+:: Agent A ::
+Path = [0, 3, 4, 5, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 5, 8, 7, 4, 1, 0, 3, 6]
+Discounted Return = 92.27446944279201
+
+Path #44
+:: Agent A ::
+Path = [0, 3, 4, 5, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 5, 8, 7, 4, 3, 6]
+Discounted Return = 94.1480149401
+
+Path #45
+:: Agent A ::
+Path = [0, 3, 4, 5, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 5, 8, 7, 6]
+Discounted Return = 96.059601
+
+Path #46
+:: Agent A ::
+Path = [0, 3, 4, 7, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 1, 0, 3, 6]
+Discounted Return = 96.059601
+
+Path #47
+:: Agent A ::
+Path = [0, 3, 4, 7, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 1, 0, 3, 4, 5, 8, 7, 6]
+Discounted Return = 92.27446944279201
+
+Path #48
+:: Agent A ::
+Path = [0, 3, 4, 7, 8]
+Discounted Return = 96.059601
+:: Agent B ::
+Path = [2, 1, 0, 3, 4, 7, 6]
+Discounted Return = 94.1480149401
