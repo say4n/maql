@@ -82,12 +82,28 @@ def print_graph(graph, agentA, agentB, goalA, goalB, pathA, pathB, name):
                                width=linewidths[ctr])
 
     plt.axis('off')
+
     plt.legend(["Nodes", "Edges", "Agent A", "Agent B"],
                fontsize='x-small',
                markerscale=0.1,
-               loc=(0.1, 0.1))
+               loc=(0, 0))
+
+    ticks = [-0.5, 0.5, 1.5, 2.5]
+
+    for tick in ticks:
+        plt.axvline(tick,
+                    color='grey',
+                    alpha=0.8,
+                    linewidth=0.5,
+                    zorder=-10)
+        plt.axhline(tick,
+                    color='grey',
+                    alpha=0.8,
+                    linewidth=0.5,
+                    zorder=-10)
+
     plt.savefig(os.path.join("traversals", name),
-                bb0x_inches='tight',
+                bbox_inches='tight',
                 transparent=True,
                 dpi=200)
     plt.close()
