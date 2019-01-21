@@ -10,7 +10,7 @@ BETA = 0.99
 REWARD = 100
 
 AGENT_A_POSITION = 0
-AGENT_B_POSITION = 2
+AGENT_B_POSITION = BOARD_DIM - 1
 
 graph = nx.Graph()
 graph.add_nodes_from(range(0, BOARD_DIM**2))
@@ -101,7 +101,7 @@ def discounted_return(path):
 
 
 if __name__ == '__main__':
-    goalA, goalB = 8, 6
+    goalA, goalB = BOARD_DIM**2 - 1, BOARD_DIM**2 - BOARD_DIM
     agentA, agentB = AGENT_A_POSITION, AGENT_B_POSITION
 
     pathsA = list(nx.all_simple_paths(graph, source=agentA, target=goalA))
