@@ -150,6 +150,9 @@ if __name__ == '__main__':
             a, b = paths
             name = f"game #{idx+1}.png"
 
+            if len(a) != len(b):
+                continue
+
             print_graph(graph, agentA, agentB, goalA, goalB, a, b, name)
 
             returnA = discounted_return(a)
