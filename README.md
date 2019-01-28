@@ -1,6 +1,6 @@
 # maql
 
-Multi agent Q-learning
+Multi agent Q-learning, work in progress
 
 
 ## how to use
