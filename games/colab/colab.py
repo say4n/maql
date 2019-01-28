@@ -276,13 +276,13 @@ if __name__ == '__main__':
     goal = [91, 81]
 
     env = World(dim, obstacles, src, goal)
-    # env.show()
+    env.show()
 
-    _, paths = env.find_paths()
+    # _, paths = env.find_paths()
 
-    for idx, pair in enumerate(paths):
-        print(f"Saving path {idx + 1} of {len(paths)}", end="\r\r")
-        env.print(pair, "paths", f"path_{idx + 1}.svg")
+    # for idx, pair in enumerate(paths):
+    #     print(f"Saving path {idx + 1} of {len(paths)}", end="\r\r")
+    #     env.print(pair, "paths", f"path_{idx + 1}.svg")
 
-        if idx == 100 - 1:
-            break
+    #     if idx == 100 - 1:
+    #         break
