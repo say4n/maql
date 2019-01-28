@@ -292,10 +292,10 @@ if __name__ == '__main__':
     #     if idx == 200 - 1:
     #         break
 
-    for idx, pair in enumerate(readable_paths):
-        with open("paths.txt", "w") as fp:
+    with open("paths.txt", "w") as fp:
+        for idx, pair in enumerate(readable_paths):
             a, b = pair
-            fp.writeline(f"\n\n:: Pair #{idx + 1}::")
-            fp.writeline(f"Path A: {a}")
-            fp.writeline(f"Path B: {b}")
+            fp.write(f"\n:: Pair #{idx + 1}::\n\n")
+            fp.write(f"Path A: {a}\n")
+            fp.write(f"Path B: {b}\n")
 
