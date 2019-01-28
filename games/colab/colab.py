@@ -7,6 +7,9 @@ Reference: https://doi.org/10.1016/j.robot.2017.03.003
 from matplotlib import pyplot as plt
 import numpy as np
 import networkx as nx
+import os
+import random
+
 
 class World:
     BLANK = 0
@@ -67,22 +70,18 @@ class World:
 
 
     def is_mahattan(self, p1, p2):
-        if abs(len(p1) - len(p2)) == 1:
-            print("here")
-            return True
-        else:
-            t_span = min(len(p1), len(p2))
+        t_span = min(len(p1), len(p2))
 
-            for t_step in range(t_span):
-                (x1, y1), (x2, y2) = p1[t_step], p2[t_step]
-                dist = abs(x2-x1) + abs(y2-y1)
+        for t_step in range(t_span):
+            (x1, y1), (x2, y2) = p1[t_step], p2[t_step]
+            dist = abs(x2-x1) + abs(y2-y1)
 
-                if dist == 1:
-                    continue
-                else:
-                    return False
+            if dist == 1:
+                continue
+            else:
+                return False
 
-            return True
+        return True
 
 
     def find_paths(self):
@@ -107,22 +106,26 @@ class World:
         print(f"# of paths for agent 2: {len(paths2)}")
 
         pruned_paths = []
+        pruned_paths_raw = []
         pruned_1 = set()
         pruned_2 = set()
 
         for p1 in paths1:
             for p2 in paths2:
                 if self.is_mahattan(p1, p2):
-                    pA = str(list(map(self.pos2index, p1)))
-                    pB = str(list(map(self.pos2index, p2)))
+                    pA = list(map(self.pos2index, p1))
+                    pB = list(map(self.pos2index, p2))
 
                     pruned_paths.append((pA, pB))
+                    pruned_paths_raw.append((p1, p2))
                     pruned_1.add(str(pA))
                     pruned_2.add(str(pB))
 
         print(f"# of pruned path pairs: {len(pruned_paths)}")
         print(f"# of pruned paths for agent 1: {len(pruned_1)}")
         print(f"# of pruned paths for agent 2: {len(pruned_2)}")
+
+        return pruned_paths, pruned_paths_raw
 
 
     def show(self, paths=None):
@@ -169,9 +172,99 @@ class World:
 
         if paths is not None:
             pathA, pathB = paths
-            pass
+
+            edges = []
+            for idx in range(len(pathA)-1):
+                edges.append((pathA[idx], pathA[idx+1]))
+
+            nx.draw_networkx_edges(self.board,
+                                   pos=layout,
+                                   edgelist=edges,
+                                   edge_color='r',
+                                   width=4)
+
+            edges = []
+            for idx in range(len(pathB)-1):
+                edges.append((pathB[idx], pathB[idx+1]))
+
+            nx.draw_networkx_edges(self.board,
+                                   pos=layout,
+                                   edgelist=edges,
+                                   edge_color='y',
+                                   width=2)
 
         plt.show()
+        plt.close()
+
+    def print(self, paths, save_dir, name):
+        layout = nx.spectral_layout(self.board)
+
+        for k in layout:
+            layout[k] = k
+
+        labels = dict()
+        colors = list()
+
+        for x in range(self.grid_size):
+            for y in range(self.grid_size):
+                labels[(x, y)] = self.pos2index((x, y))
+                color = 'k'
+
+                if self.pos2index((x, y)) == self.src[0]:
+                    labels[(x, y)] = "S1"
+                    color = 'r'
+                if self.pos2index((x, y)) == self.src[1]:
+                    labels[(x, y)] = "S2"
+                    color = 'y'
+                if self.pos2index((x, y)) == self.dst[0]:
+                    labels[(x, y)] = "G1"
+                    color = 'r'
+                if self.pos2index((x, y)) == self.dst[1]:
+                    labels[(x, y)] = "G2"
+                    color = 'y'
+
+                colors.append(color)
+
+
+        nx.draw(self.board,
+                labels=labels,
+                with_labels=True,
+                pos=layout,
+                node_color=colors,
+                node_shape='s',
+                node_size=400,
+                font_color='w',
+                font_size=8,
+                width=10)
+
+
+        if paths is not None:
+            pathA, pathB = paths
+
+            edges = []
+            for idx in range(len(pathA)-1):
+                edges.append((pathA[idx], pathA[idx+1]))
+
+            nx.draw_networkx_edges(self.board,
+                                   pos=layout,
+                                   edgelist=edges,
+                                   edge_color='r',
+                                   width=4)
+
+            edges = []
+            for idx in range(len(pathB)-1):
+                edges.append((pathB[idx], pathB[idx+1]))
+
+            nx.draw_networkx_edges(self.board,
+                                   pos=layout,
+                                   edgelist=edges,
+                                   edge_color='y',
+                                   width=2)
+
+        plt.savefig(os.path.join(save_dir, name),
+                    bbox_inches='tight',
+                    transparent=True,
+                    dpi=200)
         plt.close()
 
 
@@ -183,5 +276,13 @@ if __name__ == '__main__':
     goal = [91, 81]
 
     env = World(dim, obstacles, src, goal)
-    env.show()
-    # env.find_paths()
+    # env.show()
+
+    _, paths = env.find_paths()
+
+    for idx, pair in enumerate(paths):
+        print(f"Saving path {idx + 1} of {len(paths)}", end="\r\r")
+        env.print(pair, "paths", f"path_{idx + 1}.svg")
+
+        if idx == 100 - 1:
+            break
