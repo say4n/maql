@@ -84,23 +84,25 @@ class World:
         return True
 
 
-    def find_paths(self):
+    def find_paths(self, cutoff=20):
         src1, src2 = self.src
         dst1, dst2 = self.dst
 
         src_1 = self.index2pos(src1)
         dst_1 = self.index2pos(dst1)
 
-        paths1 = list(nx.all_shortest_paths(self.board,
-                                           source=src_1,
-                                           target=dst_1))
+        paths1 = list(nx.all_simple_paths(self.board,
+                                          source=src_1,
+                                          target=dst_1,
+                                          cutoff=cutoff))
 
         src_2 = self.index2pos(src2)
         dst_2 = self.index2pos(dst2)
 
-        paths2 = list(nx.all_shortest_paths(self.board,
-                                           source=src_2,
-                                           target=dst_2))
+        paths2 = list(nx.all_simple_paths(self.board,
+                                          source=src_2,
+                                          target=dst_2,
+                                          cutoff=cutoff))
 
         print(f"# of paths for agent 1: {len(paths1)}")
         print(f"# of paths for agent 2: {len(paths2)}")
@@ -276,9 +278,10 @@ if __name__ == '__main__':
     goal = [91, 81]
 
     env = World(dim, obstacles, src, goal)
-    env.show()
+    # env.show()
 
-    # _, paths = env.find_paths()
+    _, paths = env.find_paths()
+    print(paths)
 
     # for idx, pair in enumerate(paths):
     #     print(f"Saving path {idx + 1} of {len(paths)}", end="\r\r")
