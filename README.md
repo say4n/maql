@@ -3,7 +3,7 @@
 Multi agent Q-learning, work in progress
 
 
-## how to use
+## usage
 
 - install python 3.7
 - install dependencies using `pipenv install`
