@@ -9,6 +9,7 @@ verify_ssl = true
 matplotlib = "*"
 numpy = "*"
 networkx = "*"
+tqdm = "*"
 
 [requires]
 python_version = "3.7"

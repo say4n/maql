@@ -9,6 +9,7 @@ import numpy as np
 import networkx as nx
 import os
 import random
+from tqdm import tqdm
 
 
 class World:
@@ -70,21 +71,23 @@ class World:
 
 
     def is_mahattan(self, p1, p2):
-        t_span = min(len(p1), len(p2))
+        if len(p1) != len(p2):
+            return False
+
+        t_span = len(p1)
 
         for t_step in range(t_span):
             (x1, y1), (x2, y2) = p1[t_step], p2[t_step]
             dist = abs(x2-x1) + abs(y2-y1)
 
-            if dist == 1:
-                continue
-            else:
+            if dist != 1:
                 return False
 
         return True
 
 
     def find_paths(self, cutoff=20):
+        print(f"Using search depth of {cutoff} for dfs.")
         src1, src2 = self.src
         dst1, dst2 = self.dst
 
@@ -112,7 +115,7 @@ class World:
         pruned_1 = set()
         pruned_2 = set()
 
-        for p1 in paths1:
+        for p1 in tqdm(paths1):
             for p2 in paths2:
                 if self.is_mahattan(p1, p2):
                     pA = list(map(self.pos2index, p1))
@@ -123,7 +126,7 @@ class World:
                     pruned_1.add(str(pA))
                     pruned_2.add(str(pB))
 
-        print(f"# of pruned path pairs: {len(pruned_paths)}")
+        print(f"{len(pruned_paths)} of {len(paths1) * len(paths1)} path pairs remain after pruning")
         print(f"# of pruned paths for agent 1: {len(pruned_1)}")
         print(f"# of pruned paths for agent 2: {len(pruned_2)}")
 
@@ -281,11 +284,10 @@ if __name__ == '__main__':
     # env.show()
 
     _, paths = env.find_paths()
-    print(paths)
 
-    # for idx, pair in enumerate(paths):
-    #     print(f"Saving path {idx + 1} of {len(paths)}", end="\r\r")
-    #     env.print(pair, "paths", f"path_{idx + 1}.svg")
+    for idx, pair in enumerate(paths):
+        print(f"Saving path {idx + 1} of {len(paths)}", end="\r\r")
+        env.print(pair, "paths", f"path_{idx + 1}.svg")
 
-    #     if idx == 100 - 1:
-    #         break
+        if idx == 100 - 1:
+            break
