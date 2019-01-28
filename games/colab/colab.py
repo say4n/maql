@@ -283,11 +283,19 @@ if __name__ == '__main__':
     env = World(dim, obstacles, src, goal)
     # env.show()
 
-    _, paths = env.find_paths()
+    readable_paths, paths = env.find_paths()
 
-    for idx, pair in enumerate(paths):
-        print(f"Saving path {idx + 1} of {len(paths)}", end="\r\r")
-        env.print(pair, "paths", f"path_{idx + 1}.svg")
+    # for idx, pair in enumerate(paths):
+    #     print(f"Saving path {idx + 1} of {len(paths)}", end="\r\r")
+    #     env.print(pair, "paths", f"path_{idx + 1}.svg")
 
-        if idx == 100 - 1:
-            break
+    #     if idx == 200 - 1:
+    #         break
+
+    for idx, pair in enumerate(readable_paths):
+        with open("paths.txt", "w") as fp:
+            a, b = pair
+            fp.writeline(f"\n\n:: Pair #{idx + 1}::")
+            fp.writeline(f"Path A: {a}")
+            fp.writeline(f"Path B: {b}")
+
