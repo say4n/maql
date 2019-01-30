@@ -285,17 +285,18 @@ if __name__ == '__main__':
 
     readable_paths, paths = env.find_paths()
 
+    # num_save = 1000
     # for idx, pair in enumerate(paths):
-    #     print(f"Saving path {idx + 1} of {len(paths)}", end="\r\r")
+    #     print(f"Saving path {idx + 1} of {num_save}", end="\r\r")
     #     env.print(pair, "paths", f"path_{idx + 1}.svg")
 
-    #     if idx == 200 - 1:
+    #     if idx == num_save - 1:
     #         break
 
-    with open("paths.txt", "w") as fp:
-        for idx, pair in enumerate(readable_paths):
-            a, b = pair
-            fp.write(f"\n:: Pair #{idx + 1}::\n\n")
-            fp.write(f"Path A: {a}\n")
-            fp.write(f"Path B: {b}\n")
+    # with open("paths.txt", "w") as fp:
+    #     for idx, pair in enumerate(readable_paths):
+    #         a, b = pair
+    #         fp.write(f"\n:: Pair #{idx + 1}::\n\n")
+    #         fp.write(f"Path A: {a}\n")
+    #         fp.write(f"Path B: {b}\n")
 
